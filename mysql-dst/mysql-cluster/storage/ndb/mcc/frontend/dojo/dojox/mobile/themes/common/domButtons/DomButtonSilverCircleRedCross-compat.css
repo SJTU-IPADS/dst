@@ -1,0 +1,9 @@
+
+.mblDomButtonSilverCircleRedCross {
+	background-image: url(compat/mblDomButtonSilverCircleRedCross.png);
+	background-repeat: no-repeat;
+}
+.mblDomButtonSilverCircleRedCross > div {
+	display: none;
+}
+ 

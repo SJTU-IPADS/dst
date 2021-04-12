@@ -1,0 +1,2 @@
+--default-storage-engine=InnoDB --gtid-mode=on --enforce-gtid-consistency=on --log-slave-updates
+ 

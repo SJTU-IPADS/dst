@@ -1,0 +1,2 @@
+--debug=d,emulate_empty_datadir_param --force-restart
+ 

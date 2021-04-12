@@ -1,0 +1,2 @@
+--innodb-buffer-pool-chunk-size=2M
+ 

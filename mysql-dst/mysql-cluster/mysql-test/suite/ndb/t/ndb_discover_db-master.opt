@@ -1,0 +1,2 @@
+--log-bin=mysqld-bin --binlog-format=mixed
+ 

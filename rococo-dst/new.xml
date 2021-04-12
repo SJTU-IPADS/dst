@@ -1,0 +1,143 @@
+<benchmark batch_start="false" concurrent_txn="1" mode="deptran" name="tpcc" scale_factor="1" txn_weight="45:43:4:4:4">
+    <hosts number="8">
+        <site id="0" threads="1">node1:18000</site>
+        <site id="1" threads="1">node2:18001</site>
+	<site id="2" threads="1">node3:18002</site>
+	<site id="3" threads="1">node4:18003</site>
+        <site id="4" threads="1">node5:18004</site>
+        <site id="5" threads="1">node6:18005</site>
+	<site id="6" threads="1">node7:18006</site>
+	<site id="7" threads="1">node8:18007</site>
+    </hosts>
+    <clients number="8">
+    <client id="00" threads="1">node9</client><client id="01" threads="1">node10</client><client id="02" threads="1">node11</client><client id="03" threads="1">node12</client><client id="04" threads="1">node13</client><client id="05" threads="1">node14</client><client id="06" threads="1">node15</client><client id="07" threads="1">node16</client></clients>
+    <table all_site="true" name="warehouse" records="1" shard_method="int_modulus">
+        <schema>
+            <column name="w_id" primary="true" type="i32" />
+            <column name="w_name" type="str" />
+            <column name="w_street_1" type="str" />
+            <column name="w_street_2" type="str" />
+            <column name="w_city" type="str" />
+            <column name="w_state" type="str" />
+            <column name="w_zip" type="str" />
+            <column name="w_tax" type="double" />
+            <column name="w_ytd" type="double" />
+        </schema>
+    </table>
+    <table all_site="true" name="district" records="10" shard_method="int_modulus">
+        <schema>
+            <column name="d_id" primary="true" type="i32" />
+            <column foreign="warehouse.w_id" name="d_w_id" primary="true" type="i32" />
+            <column name="d_name" type="str" />
+            <column name="d_street_1" type="str" />
+            <column name="d_street_2" type="str" />
+            <column name="d_city" type="str" />
+            <column name="d_state" type="str" />
+            <column name="d_zip" type="str" />
+            <column name="d_tax" type="double" />
+            <column name="d_ytd" type="double" />
+            <column name="d_next_o_id" type="i32" />
+        </schema>
+    </table>
+    <table all_site="true" name="customer" records="30000" shard_method="int_modulus">
+        <schema>
+            <column name="c_id" primary="true" type="i32" />
+            <column foreign="district.d_id" name="c_d_id" primary="true" type="i32" />
+            <column foreign="district.d_w_id" name="c_w_id" primary="true" type="i32" />
+            <column name="c_first" type="str" />
+            <column name="c_middle" type="str" />
+            <column name="c_last" type="str" />
+            <column name="c_street_1" type="str" />
+            <column name="c_street_2" type="str" />
+            <column name="c_city" type="str" />
+            <column name="c_state" type="str" />
+            <column name="c_zip" type="str" />
+            <column name="c_phone" type="str" />
+            <column name="c_since" type="str" />
+            <column name="c_credit" type="str" />
+            <column name="c_credit_lim" type="double" />
+            <column name="c_discount" type="double" />
+            <column name="c_balance" type="double" />
+            <column name="c_ytd_payment" type="double" />
+            <column name="c_payment_cnt" type="i32" />
+            <column name="c_delivery_cnt" type="i32" />
+            <column name="c_data" type="str" />
+        </schema>
+    </table>
+    <table all_site="true" name="history" records="30000" shard_method="int_modulus">
+        <schema>
+            <column name="h_key" primary="true" type="i32" />
+            <column foreign="customer.c_id" name="h_c_id" type="i32" />
+            <column foreign="customer.c_d_id" name="h_c_d_id" type="i32" />
+            <column foreign="customer.c_w_id" name="h_c_w_id" type="i32" />
+            <column foreign="district.d_id" name="h_d_id" type="i32" />
+            <column foreign="district.d_w_id" name="h_w_id" type="i32" />
+            <column name="h_date" type="str" />
+            <column name="h_amount" type="double" />
+            <column name="h_data" type="str" />
+        </schema>
+    </table>
+    <table all_site="true" name="order" records="30000" shard_method="int_modulus">
+        <schema>
+            <column foreign="district.d_id" name="o_d_id" primary="true" type="i32" />
+            <column foreign="district.d_w_id" name="o_w_id" primary="true" type="i32" />
+            <column name="o_id" primary="true" type="i32" />
+            <column foreign="customer.c_id" name="o_c_id" type="i32" />
+            <column name="o_entry_d" type="str" />
+            <column name="o_carrier_id" type="i32" />
+            <column name="o_ol_cnt" type="i32" />
+            <column name="o_all_local" type="i32" />
+        </schema>
+    </table>
+    <table all_site="true" name="new_order" records="9000" shard_method="int_modulus">
+        <schema>
+            <column foreign="order.o_d_id" name="no_d_id" primary="true" type="i32" />
+            <column foreign="order.o_w_id" name="no_w_id" primary="true" type="i32" />
+            <column foreign="order.o_id" name="no_o_id" primary="true" type="i32" />
+        </schema>
+    </table>
+    <table all_site="true" name="item" records="100000" shard_method="int_modulus">
+        <schema>
+            <column name="i_id" primary="true" type="i32" />
+            <column name="i_im_id" type="i32" />
+            <column name="i_name" type="str" />
+            <column name="i_price" type="double" />
+            <column name="i_data" type="str" />
+        </schema>
+    </table>
+    <table all_site="true" name="stock" records="100000" shard_method="int_modulus">
+        <schema>
+            <column foreign="item.i_id" name="s_i_id" primary="true" type="i32" />
+            <column foreign="warehouse.w_id" name="s_w_id" primary="true" type="i32" />
+            <column name="s_quantity" type="i32" />
+            <column name="s_dist_01" type="str" />
+            <column name="s_dist_02" type="str" />
+            <column name="s_dist_03" type="str" />
+            <column name="s_dist_04" type="str" />
+            <column name="s_dist_05" type="str" />
+            <column name="s_dist_06" type="str" />
+            <column name="s_dist_07" type="str" />
+            <column name="s_dist_08" type="str" />
+            <column name="s_dist_09" type="str" />
+            <column name="s_dist_10" type="str" />
+            <column name="s_ytd" type="i32" />
+            <column name="s_order_cnt" type="i32" />
+            <column name="s_remote_cnt" type="i32" />
+            <column name="s_data" type="str" />
+        </schema>
+    </table>
+    <table all_site="true" name="order_line" records="300000" shard_method="int_modulus">
+        <schema>
+            <column foreign="order.o_d_id" name="ol_d_id" primary="true" type="i32" />
+            <column foreign="order.o_w_id" name="ol_w_id" primary="true" type="i32" />
+            <column foreign="order.o_id" name="ol_o_id" primary="true" type="i32" />
+            <column name="ol_number" primary="true" type="i32" />
+            <column foreign="stock.s_i_id" name="ol_i_id" type="i32" />
+            <column foreign="stock.s_w_id" name="ol_supply_w_id" type="i32" />
+            <column name="ol_delivery_d" type="str" />
+            <column name="ol_quantity" type="i32" />
+            <column name="ol_amount" type="double" />
+            <column name="ol_dist_info" type="str" />
+        </schema>
+    </table>
+</benchmark> 

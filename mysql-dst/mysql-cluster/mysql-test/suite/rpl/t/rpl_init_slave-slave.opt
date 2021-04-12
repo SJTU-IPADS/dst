@@ -1,0 +1,2 @@
+--init-slave="set global max_connections=500"
+ 

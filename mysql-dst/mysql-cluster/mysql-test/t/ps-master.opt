@@ -1,0 +1,2 @@
+--log-output=table,file --slow-query-log --log-queries-not-using-indexes
+ 

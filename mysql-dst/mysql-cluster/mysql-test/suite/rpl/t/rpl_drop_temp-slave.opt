@@ -1,0 +1,3 @@
+--replicate-ignore-table=mysqltest.t2
+
+ 

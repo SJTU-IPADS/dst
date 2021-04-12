@@ -1,0 +1,2 @@
+--no-console --log_error=$MYSQLTEST_VARDIR/tmp/gr_applier_error.2.err
+ 

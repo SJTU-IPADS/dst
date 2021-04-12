@@ -1,0 +1,2 @@
+--replicate-ignore-db=db1 --replicate-wild-ignore-table=db1.%
+ 

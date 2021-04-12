@@ -1,0 +1,2 @@
+--pid-file=$MYSQLTEST_VARDIR/run/mysqld.1.pid --general-log
+ 

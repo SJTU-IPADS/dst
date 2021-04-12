@@ -1,0 +1,6 @@
+CMPT	Completed
+ACTV	Active
+SBMT	Submitted
+PNDG	Pending
+CNCL	Canceled
+ 

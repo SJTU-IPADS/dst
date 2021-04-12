@@ -1,0 +1,2 @@
+--innodb_flush_method=O_DIRECT
+ 

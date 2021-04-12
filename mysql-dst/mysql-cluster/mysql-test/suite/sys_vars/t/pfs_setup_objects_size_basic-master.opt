@@ -1,0 +1,3 @@
+--loose-enable-performance-schema
+--loose-performance-schema-setup-objects-size=123
+ 

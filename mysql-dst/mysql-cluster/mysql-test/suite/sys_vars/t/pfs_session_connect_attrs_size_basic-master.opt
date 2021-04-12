@@ -1,0 +1,3 @@
+--loose-enable-performance-schema
+--loose-performance-schema-session-connect-attrs-size=2048
+ 

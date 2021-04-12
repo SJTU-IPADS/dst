@@ -1,0 +1,2 @@
+--init_connect="set @a='a\\0c'"
+ 

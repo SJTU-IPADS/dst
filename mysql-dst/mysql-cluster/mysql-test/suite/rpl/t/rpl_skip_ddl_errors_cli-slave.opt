@@ -1,0 +1,2 @@
+--slave-skip-errors=ddl_exist_errors,1003
+ 

@@ -1,0 +1,4 @@
+SELECT * FROM statistics;
+tx_errors
+0
+ 

@@ -1,0 +1,2 @@
+--force-restart --slave-transaction-retries=0 --relay-log-info-repository=TABLE --master-info-repository=TABLE
+ 

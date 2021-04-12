@@ -1,0 +1,2 @@
+--loose-debug=+d,LOAD_DATA_INFILE_has_fatal_error
+ 

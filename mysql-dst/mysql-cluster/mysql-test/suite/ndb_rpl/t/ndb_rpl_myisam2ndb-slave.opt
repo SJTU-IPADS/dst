@@ -1,0 +1,2 @@
+--new --default-storage-engine=ndbcluster
+ 

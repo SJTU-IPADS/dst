@@ -1,0 +1,5 @@
+!include ndb_rpl_conflict_epoch.cnf
+
+[mysqld]
+ndb-log-apply-status
+ 

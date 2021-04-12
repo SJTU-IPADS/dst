@@ -1,0 +1,3 @@
+--loose-enable-performance-schema
+--loose-performance-schema-events-statements-history-long-size=15000
+ 

@@ -1,0 +1,8 @@
+USE ndbinfo;
+select count(*) from blocks;
+count(*)
+23
+select count(*) from blocks;
+count(*)
+23
+ 

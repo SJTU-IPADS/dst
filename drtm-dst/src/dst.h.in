@@ -1,0 +1,10 @@
+#pragma once
+
+/**
+ * some dst related setting
+ */
+#cmakedefine TS_BATCH @TS_BATCH@
+#ifndef TS_BATCH
+#define TS_BATCH 1
+#endif
+ 

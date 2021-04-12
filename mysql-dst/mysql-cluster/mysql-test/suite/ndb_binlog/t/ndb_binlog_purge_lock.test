@@ -1,0 +1,2 @@
+--source suite/ndb_binlog/t/ndb_binlog_purge_lock.inc
+ 

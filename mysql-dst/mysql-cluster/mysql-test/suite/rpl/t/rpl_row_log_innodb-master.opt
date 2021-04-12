@@ -1,0 +1,3 @@
+--skip-external-locking
+--default-storage-engine=MyISAM
+ 

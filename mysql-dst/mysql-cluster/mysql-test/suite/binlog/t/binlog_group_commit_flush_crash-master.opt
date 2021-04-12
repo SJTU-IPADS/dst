@@ -1,0 +1,2 @@
+--sync-binlog=1 --innodb-flush-log-at-trx-commit=1
+ 

@@ -1,0 +1,6 @@
+!include ../my.cnf
+
+[mysqld.2]
+master-info-repository=TABLE
+relay-log-info-repository=TABLE
+ 

@@ -1,0 +1,2 @@
+--loose-ndbcluster=OFF --log-slave-updates=0
+ 

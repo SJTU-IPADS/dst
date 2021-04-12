@@ -1,0 +1,35 @@
+<bench>
+  <port> 7779 </port>
+  <threads> 24 </threads>
+  <backup_threads>12</backup_threads>
+  <scale>   1 </scale>
+  <micro>18</micro>
+  <rep-factor>0</rep-factor>
+  <bank>
+    <sp> 100 </sp>
+    <dc> 0 </dc>
+    <payment> 0 </payment>
+    <ts> 0 </ts>
+    <wc> 0 </wc> 
+    <aml> 0 </aml>
+  </bank>
+  <tpcc>
+    <new>45</new>
+    <pay>43</pay>
+    <del>4</del>
+    <stock>4</stock>
+    <order>4</order>
+  </tpcc>
+  <!-- <tpcc> -->
+  <!--   <new>0</new> -->
+  <!--   <pay>0</pay> -->
+  <!--   <del>0</del> -->
+  <!--   <stock>100</stock> -->
+  <!--   <order>0</order> -->
+  <!-- </tpcc> -->
+
+  <paxos>
+    <pv>100</pv>
+  </paxos>
+</bench>
+ 

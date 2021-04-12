@@ -1,0 +1,2 @@
+Here is content from load_file
+ 

@@ -1,0 +1,3 @@
+--loose-enable-performance-schema
+--loose-performance-schema-max-prepared-statements-instances=1000
+ 
